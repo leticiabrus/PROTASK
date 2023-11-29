@@ -21,7 +21,7 @@ public class SprintsJPAResource {
 	private SprintsRepository CardRepository;
 
 	@GetMapping("/jpa/Sprints")
-	public List<Sprints> retrieveAllMusicas(){
+	public List<Sprints> retrieveAllSprints(){
 		List<Sprints> Sprints = SprintsRepository.findAll();
 		
 		return Sprints;
@@ -50,9 +50,9 @@ public class SprintsJPAResource {
 		CardRepository.deleteById(id);
 	}
 	
-	@PostMapping("/jpa/musicas")
+	@PostMapping("/jpa/Sprints")
 	public ResponseEntity<Object> createUser(@RequestBody Sprints Sprint) {
-		Sprints savedMusica = new Sprints(null, null, null, null);
+		Sprints savedSprint = new Sprints(null, null, null, null);
 		
 		URI location = ServletUriComponentsBuilder
 			.fromCurrentRequest()
