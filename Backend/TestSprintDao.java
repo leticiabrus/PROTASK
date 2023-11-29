@@ -17,8 +17,8 @@ public class TestSprintDao extends TestCase {
 		SprintsDaoService service = new SprintsDaoService();
 		
 		//test save and find one
-		service.save(musicaEsperado);
-		Sprints musicaEncontrado = new Sprints();
+		service.save(SprintEsperado);
+		Sprints SprintEncontrado = new Sprints();
 		musicaEncontrado = service.findOne(identifier);
 		assertEquals(nome, sprintEncontrado.getNome());
 		assertEquals(Card, sprintEncontrado.getSprint());
@@ -27,7 +27,7 @@ public class TestSprintDao extends TestCase {
 		//test delete 
 		sprintEncontrado = service.deleteById(identifier);
 		assertEquals(nome, sprintEncontrado.getNome());
-		assertEquals(sprint, sprintEncontrado.getBanda());
+		assertEquals(sprint, sprintEncontrado.getCards());
 		assertEquals(identifier,sprintEncontrado.getId());				
 	}
 }
